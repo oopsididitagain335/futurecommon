@@ -1,6 +1,7 @@
+// server.js
 require('dotenv').config();
 const express = require('express');
-const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Collection } = require('discord.js'); // ← Added Collection here
 const app = express();
 
 app.use(express.static('.'));
@@ -15,6 +16,7 @@ client.once('ready', () => {
   console.log(`🤖 FutureCommon Bot: ${client.user.tag}`);
 });
 
+// ✅ Now defined correctly
 const pendingApps = new Collection();
 
 function getButtons(appId) {
@@ -55,7 +57,8 @@ app.post('/submit', (req, res) => {
   const channel = client.channels.cache.get(process.env.DISCORD_CHANNEL_ID);
   if (channel && eligible) {
     channel.send({ embeds: [embed], components: [getButtons(appId)] })
-      .then(() => pendingApps.set(appId, { name, email, role }));
+      .then(() => pendingApps.set(appId, { name, email, role }))
+      .catch(console.error);
   }
 
   res.send(`
@@ -69,17 +72,33 @@ client.on('interactionCreate', async (i) => {
   if (!i.isButton()) return;
   const [action, appId] = i.customId.split('_');
   const app = pendingApps.get(appId);
-  if (!app) return i.reply({ content: '❌ Not found.', ephemeral: true });
+  if (!app) return i.reply({ content: '❌ Application not found.', ephemeral: true });
 
-  await i.reply({ content: action === 'accept' ? `✅ Accepted by ${i.user.username}` : `❌ Denied by ${i.user.username}`, ephemeral: false });
+  await i.reply({ 
+    content: action === 'accept' 
+      ? `✅ Accepted by ${i.user.username}` 
+      : `❌ Denied by ${i.user.username}`, 
+    ephemeral: false 
+  });
   pendingApps.delete(appId);
-  await i.message.edit({ components: [new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setCustomId('done').setLabel(action === 'accept' ? 'Accepted' : 'Denied').setStyle(action === 'accept' ? ButtonStyle.Success : ButtonStyle.Danger).setDisabled(true)
-  )] });
+
+  // Disable buttons after click
+  const updatedRow = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setCustomId('used')
+      .setLabel(action === 'accept' ? 'Accepted' : 'Denied')
+      .setStyle(action === 'accept' ? ButtonStyle.Success : ButtonStyle.Danger)
+      .setDisabled(true)
+  );
+  await i.message.edit({ components: [updatedRow] });
 });
 
+// Login to Discord
 client.login(process.env.DISCORD_TOKEN).then(() => {
-  app.listen(process.env.PORT || 3000, () => {
-    console.log('🌍 Server running on http://localhost:3000');
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`🌍 Server running on http://localhost:${PORT}`);
   });
+}).catch(err => {
+  console.error('❌ Failed to log in to Discord:', err);
 });
