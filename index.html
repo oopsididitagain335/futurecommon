@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FutureCommon | A Government That Learns</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      background: var(--dark);
+      color: white;
+    }
+    nav a {
+      color: white;
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    nav a:hover {
+      background: var(--primary);
+    }
+    main {
+      padding: 3rem 0;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+    .features {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 1.8rem;
+      width: 300px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 0;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>FutureCommon</h1>
+      <p>A government that learns, listens, and leaves no child behind.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="co-gov.html">Co-Gov</a>
+      <a href="youth-rights.html">Youth Rights</a>
+      <a href="register.html">Join Us</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h2>We’re Not Waiting for Power to Do Good</h2>
+      <p>FutureCommon is a movement building the next system — transparent, youth-led, and self-correcting. We’re not protesting. We’re prototyping.</p>
+      <a href="about.html" class="btn">See Our Mission</a>
+    </section>
+
+    <section class="features">
+      <div class="card">
+        <h3>🗳️ Youth Voting at 13</h3>
+        <p>With understanding checks — no social pressure, no lies.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Co-Govs (Coming With Power)</h3>
+        <p>We’re testing local governance — but real authority starts when we govern.</p>
+      </div>
+      <div class="card">
+        <h3>🛡️ Child Safety First</h3>
+        <p>Medical-grade support for high-risk children — humane, not hidden.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 FutureCommon. Open-source. For the next generation.</p>
+    </div>
+  </footer>
+</body>
+</html>
