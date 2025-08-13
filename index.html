@@ -6,11 +6,13 @@
   <title>FutureCommon | A Government That Learns</title>
   <style>
     :root {
-      --bg: #111827;
-      --card: #1f2937;
-      --text: #e5e7eb;
-      --accent: #3b82f6;
-      --gray: #9ca3af;
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --accent: #60a5fa;
+      --light-accent: #93c5fd;
+      --border: #334155;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
     * {
       margin: 0;
@@ -18,10 +20,10 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .container {
       max-width: 1000px;
@@ -29,107 +31,107 @@
       padding: 0 20px;
     }
     header {
-      background: var(--accent);
-      color: white;
       text-align: center;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 3rem 0;
     }
     header h1 {
       font-size: 2.8rem;
       font-weight: 700;
+      color: white;
     }
     header p {
       font-size: 1.2rem;
+      color: var(--light-accent);
+      max-width: 700px;
+      margin: 0.5rem auto 0;
       opacity: 0.9;
-      margin-top: 0.5rem;
     }
     nav {
-      background: #1f2937;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      justify-content: center;
     }
     nav a {
       color: var(--text);
-      padding: 1.2rem 1.6rem;
+      padding: 1.3rem 1.5rem;
       text-decoration: none;
       font-weight: 500;
-      display: inline-block;
-      transition: 0.3s;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
     nav a:hover {
-      background: var(--accent);
-      color: white;
-      border-radius: 8px;
+      color: var(--accent);
     }
     main {
       padding: 4rem 0;
     }
     .hero {
       text-align: center;
-      margin-bottom: 3rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
     }
     .hero h2 {
-      font-size: 2.8rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
+      font-size: 2.4rem;
+      color: white;
+      margin-bottom: 1.2rem;
     }
     .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      color: var(--gray);
+      font-size: 1.15rem;
+      color: var(--light-accent);
+      margin-bottom: 2rem;
     }
     .btn {
       display: inline-block;
       background: var(--accent);
       color: white;
-      padding: 0.9rem 2.2rem;
-      text-decoration: none;
+      padding: 0.9rem 2.4rem;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
-      transition: 0.3s;
-      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      font-size: 1.05rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
     }
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 15px 30px rgba(96, 165, 250, 0.3);
     }
     .features {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
     .card {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid var(--border);
       border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       padding: 2rem;
       width: 300px;
-      transition: 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow);
     }
     .card h3 {
       color: var(--accent);
-      margin-bottom: 0.8rem;
       font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
     }
     .card p {
-      color: var(--gray);
+      color: var(--text);
+      font-size: 1.05rem;
     }
     footer {
-      background: #1f2937;
-      color: var(--gray);
+      background: var(--card);
+      color: var(--light-accent);
       text-align: center;
       padding: 2.5rem 0;
-      margin-top: 4rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
     }
     footer a {
       color: var(--accent);
@@ -144,7 +146,7 @@
   <header>
     <div class="container">
       <h1>FutureCommon</h1>
-      <p>A government that learns, listens, and protects.</p>
+      <p>A government built with, not over.</p>
     </div>
   </header>
 
@@ -161,8 +163,8 @@
 
   <main class="container">
     <section class="hero">
-      <h2>We’re Not Waiting for Power to Do Good</h2>
-      <p>FutureCommon is building the next system — transparent, youth-led, and self-correcting. We’re not protesting. We’re prototyping.</p>
+      <h2>We’re Building the Government of the Future</h2>
+      <p>Transparent. Youth-powered. Self-correcting. Not a protest — a prototype.</p>
       <a href="uk-ideas.html" class="btn">See Our Reforms</a>
     </section>
 
@@ -177,7 +179,7 @@
       </div>
       <div class="card">
         <h3>🛡️ Child Safety First</h3>
-        <p>Medical-grade support for high-risk children.</p>
+        <p>Medical-grade support for high-risk children — humane, not hidden.</p>
       </div>
     </section>
   </main>
