@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Join FutureCommon</title>
+  <style>
+    :root {
+      --bg: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --accent: #3b82f6;
+      --input-bg: #374151;
+      --border: #4b5563;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    h2 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 2rem;
+    }
+    label {
+      display: block;
+      margin: 1.2rem 0 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .checkbox {
+      margin: 1.5rem 0;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 2rem auto 0;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
+    nav {
+      background: #1f2937;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: var(--text);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container" style="max-width: 1000px; padding: 0 20px;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="co-gov.html">Co-Gov</a>
+      <a href="youth-rights.html">Youth Rights</a>
+      <a href="uk-ideas.html">Our Ideas</a>
+      <a href="register.html">Join Us</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>🚀 Join FutureCommon</h2>
+    <p>Apply to serve in the co-gov. Must be 13+ as of August 13, 2025.</p>
+
+    <form id="appForm" action="/submit" method="POST">
+      <label>Name *</label>
+      <input type="text" name="name" required />
+
+      <label>Email *</label>
+      <input type="email" name="email" required />
+
+      <label>Phone *</label>
+      <input type="tel" name="phone" required />
+
+      <label>Date of Birth *</label>
+      <input type="date" name="dob" required />
+
+      <label>Location (Town/City) *</label>
+      <input type="text" name="location" required />
+
+      <label>Role Applying For *</label>
+      <select name="role" required>
+        <option value="">-- Choose a Role --</option>
+        <option value="Youth Guardian Officer">Youth Guardian Officer</option>
+        <option value="Civic Guide">Civic Guide</option>
+        <option value="Co-Gov Organizer">Co-Gov Organizer</option>
+        <option value="Truth Tracker">Truth Tracker</option>
+        <option value="Respect Officer">Respect Officer</option>
+        <option value="Crisis Response Aide">Crisis Response Aide</option>
+        <option value="Digital Safety Builder">Digital Safety Builder</option>
+        <option value="Policy Designer">Policy Designer</option>
+        <option value="Youth Advocate">Youth Advocate</option>
+        <option value="Community Storyteller">Community Storyteller</option>
+      </select>
+
+      <label>Skills & Experience</label>
+      <textarea name="skills" placeholder="e.g. organizing, tech, writing"></textarea>
+
+      <label>Why do you want to join? *</label>
+      <textarea name="why" placeholder="Be honest. We read every word." required></textarea>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="agree" required>
+          I am 13+ as of August 13, 2025, and agree to the mission.
+        </label>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>Applications are reviewed in Discord. You’ll be contacted if accepted.</p>
+  </footer>
+</body>
+</html>
