@@ -5,18 +5,18 @@
   <title>Youth Rights | FutureCommon</title>
   <style>
     :root {
-      --bg: #111827;
-      --card: #1f2937;
-      --text: #e5e7eb;
-      --accent: #3b82f6;
-      --gray: #9ca3af;
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --accent: #60a5fa;
+      --border: #334155;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .container {
       max-width: 800px;
@@ -24,12 +24,16 @@
       padding: 30px;
     }
     nav {
-      background: #1f2937;
-      padding: 1rem 0;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      justify-content: center;
     }
     nav a {
       color: var(--text);
-      margin: 0 15px;
+      padding: 1.3rem 1.5rem;
       text-decoration: none;
       font-weight: 500;
     }
@@ -37,14 +41,31 @@
       color: var(--accent);
     }
     h1, h2 {
-      color: var(--accent);
-      margin: 1.8rem 0 1rem;
+      color: white;
+      margin: 2rem 0 1.2rem;
+      font-weight: 600;
     }
     ul {
-      margin: 1rem 0 1rem 2rem;
+      margin: 1.2rem 0 1.2rem 2rem;
     }
     li {
-      margin: 0.5rem 0;
+      margin: 0.6rem 0;
+    }
+    .note {
+      background: rgba(96, 165, 250, 0.1);
+      border-left: 3px solid var(--accent);
+      padding: 1.2rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 1.05rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
     }
   </style>
 </head>
@@ -73,15 +94,12 @@
       <li><strong>Co-Govs With Power</strong> — when we govern, local groups get real authority</li>
     </ul>
 
-<h2>No Misunderstandings</h2>
-<p>We are here to <strong>support and protect children</strong>, never to control or punish them. Our approach prioritizes dignity, care, and understanding.</p>
-<ul>
-  <li>We provide guidance, not confinement</li>
-  <li>We respect children’s needs and individuality</li>
-  <li>We assist families with help and resources first</li>
-</ul>
+    <div class="note">
+      <strong>No Misunderstandings:</strong> We do not support forced clothing, diapers, or padded rooms. Our goal is <strong>protection with dignity</strong> — not control.
+    </div>
+  </div>
 
-  <footer style="text-align: center; margin-top: 3rem; color: var(--gray); padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+  <footer>
     <p>&copy; 2025 FutureCommon. Power to the people. Starting at 13.</p>
   </footer>
 </body>
